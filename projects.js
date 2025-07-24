@@ -17,7 +17,7 @@ window.projets = [
     github: 'https://github.com/Gaius18/VoiceFlow-App',
   },
   {
-    image: 'images/hackathon.jpg',
+    image: 'images/Hackathon.jpg',
     titre: 'Finalist de ABIHACK GOOGLE 2025 ',
     desc: "Un Hackathon Google 2025 a ENSEA",
     tech: ['Gemini', 'Html', 'Css', 'API'],
