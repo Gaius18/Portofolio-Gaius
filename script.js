@@ -211,4 +211,101 @@ function telechargerCV() {
 const downloadCvBtn = document.getElementById('download-cv');
 if (downloadCvBtn) {
   downloadCvBtn.addEventListener('click', telechargerCV);
+}
+
+// =====================
+// Dynamique section À propos de moi (original)
+// =====================
+
+// Effet machine à écrire sur l'accroche
+const aproposTyped = document.getElementById('apropos-typed');
+if (aproposTyped) {
+  const accroches = [
+    'avec passion.',
+    'pour l’Afrique.',
+    'avec créativité.',
+    'qui changent la donne.',
+    'et je ne m’arrête jamais !',
+  ];
+  let accIndex = 0, accChar = 0, accDeleting = false;
+  function typeApropos() {
+    const current = accroches[accIndex];
+    if (accDeleting) {
+      accChar--;
+      aproposTyped.textContent = current.substring(0, accChar);
+      if (accChar === 0) {
+        accDeleting = false;
+        accIndex = (accIndex + 1) % accroches.length;
+        setTimeout(typeApropos, 600);
+      } else {
+        setTimeout(typeApropos, 40);
+      }
+    } else {
+      accChar++;
+      aproposTyped.textContent = current.substring(0, accChar);
+      if (accChar === current.length) {
+        accDeleting = true;
+        setTimeout(typeApropos, 1200);
+      } else {
+        setTimeout(typeApropos, 80);
+      }
+    }
+  }
+  typeApropos();
+}
+
+// Carrousel de compétences (simple, défilement horizontal auto)
+const competences = [
+  { nom: 'Flutter', icon: 'flutter' },
+  { nom: 'Firebase', icon: 'firebase' },
+  { nom: 'Python', icon: 'python' },
+  { nom: 'Flask', icon: 'flask' },
+  { nom: 'HTML/CSS', icon: 'htmlcss' },
+  { nom: 'React', icon: 'react' },
+  { nom: 'PostgreSQL', icon: 'postgresql' },
+  { nom: 'MySQL', icon: 'mysql' },
+  { nom: 'Whisper (OpenAI)', icon: 'whisper' },
+  { nom: 'Machine Learning', icon: 'ml' },
+];
+const carousel = document.getElementById('competences-carousel');
+if (carousel) {
+  let idx = 0;
+  function renderCompetence(i) {
+    const c = competences[i];
+    return `<span class="competence-item ${c.icon}">${c.nom}</span>`;
+  }
+  function updateCarousel() {
+    carousel.innerHTML =
+      renderCompetence(idx % competences.length) +
+      renderCompetence((idx + 1) % competences.length) +
+      renderCompetence((idx + 2) % competences.length);
+    idx = (idx + 1) % competences.length;
+  }
+  updateCarousel();
+  setInterval(updateCarousel, 1700);
+}
+
+// Fun fact/citation dynamique
+const funfacts = [
+  "J'ai appris à coder avant de savoir faire du vélo !",
+  "Je peux faire un site web plus vite que mon ombre.",
+  "Je rêve de créer une IA qui parle baoulé.",
+  "J'ai déjà codé 12h d'affilée... pour le fun !",
+  "Je collectionne les stickers de hackathons.",
+  "Ma playlist de code : 80% gospel, 20% lo-fi.",
+  "Un bug ? Un défi de plus à relever !",
+  "Je crois que le café, c'est du code liquide.",
+  "J'ai pitché un projet devant Google !",
+  "Je code même en vacances (chut 🤫)"
+];
+const funfactBtn = document.getElementById('funfact-btn');
+const funfactText = document.getElementById('funfact-text');
+if (funfactBtn && funfactText) {
+  funfactBtn.addEventListener('click', () => {
+    const idx = Math.floor(Math.random() * funfacts.length);
+    funfactText.textContent = funfacts[idx];
+    funfactText.style.color = `hsl(${Math.floor(Math.random()*360)},70%,45%)`;
+  });
+  // Affiche un fun fact au chargement
+  funfactBtn.click();
 } 

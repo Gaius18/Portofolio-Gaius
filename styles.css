@@ -946,3 +946,196 @@ a{
     max-width: 340px;
   }
 }
+
+/* --- Section À propos de moi (nouveau design, bords mis en valeur) --- */
+.apropos-nouveau {
+  background: linear-gradient(120deg, #fffbe6 0%, #e0f7fa 100%);
+  border-radius: 2rem;
+  box-shadow: 0 8px 40px rgba(30,144,255,0.10);
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
+  margin: 3rem auto 2rem auto;
+  max-width: 950px;
+  position: relative;
+  overflow: visible;
+}
+.apropos-nouveau h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 2.2rem;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+}
+.apropos-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+.apropos-card {
+  background: var(--color-card);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(30,144,255,0.10);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  min-width: 220px;
+  max-width: 320px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s, border 0.25s;
+  z-index: 1;
+  border: 3px solid var(--color-accent);
+  /* Accentue le bord */
+  box-shadow: 0 0 0 4px #ffe08244, 0 8px 32px rgba(30,144,255,0.10);
+}
+.apropos-card:hover {
+  transform: translateY(-10px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 0 0 6px var(--color-primary), 0 12px 40px rgba(255,76,90,0.13);
+  background: linear-gradient(120deg, #fffbe6 60%, #e0f7fa 100%);
+  border-color: var(--color-primary);
+}
+.apropos-avatar {
+  margin-bottom: 1rem;
+}
+.apropos-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 2px 12px rgba(255,180,0,0.13);
+  object-fit: cover;
+  background: #fff;
+  transition: transform 0.3s, border 0.2s;
+}
+.apropos-card:hover .apropos-photo {
+  transform: scale(1.08) rotate(-3deg);
+  border-color: var(--color-primary);
+}
+.apropos-nom {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.2em;
+}
+.apropos-accroche {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+  min-height: 2.2rem;
+}
+.apropos-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 2px 6px #ffb40033);
+}
+.apropos-card-content {
+  text-align: center;
+}
+#competences-carousel {
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 40px;
+}
+.funfact-btn {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.5rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px #ffb40022;
+  transition: background 0.2s, transform 0.2s;
+}
+.funfact-btn:hover {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transform: scale(1.07) rotate(-2deg);
+}
+.funfact-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  min-height: 1.5rem;
+  font-style: italic;
+  transition: color 0.2s;
+}
+@media (max-width: 900px) {
+  .apropos-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .apropos-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* --- Section À propos de moi (version texte) --- */
+.apropos-texte {
+  background: none;
+  max-width: 900px;
+  margin: 3rem auto 2rem auto;
+  padding: 0 1.5rem 2rem 1.5rem;
+  box-shadow: none;
+}
+.apropos-texte h2 {
+  color: var(--color-primary);
+  font-size: 2.4rem;
+  margin-bottom: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.apropos-texte-content {
+  font-size: 1.18rem;
+  color: #2980f2;
+  line-height: 1.6;
+  margin-bottom: 1.7rem;
+}
+.apropos-texte-content p {
+  margin-bottom: 1.3rem;
+}
+.apropos-texte-content b {
+  color: #1976d2;
+}
+.apropos-texte-content .emoji {
+  font-size: 1.2em;
+  margin-right: 0.2em;
+  vertical-align: middle;
+}
+.cv-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.3rem;
+  background: linear-gradient(90deg, #f5f6fa 0%, #e0f7fa 100%);
+  color: #1e90ff;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #e0e0e0;
+  transition: background 0.4s cubic-bezier(.4,2,.6,1), color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.06);
+  position: relative;
+  overflow: hidden;
+}
+.cv-btn:hover {
+  background: linear-gradient(100deg, #1e90ff 0%, #ffb400 100%);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(30,144,255,0.18);
+  transform: translateY(-3px) scale(1.04);
+}
+@media (max-width: 700px) {
+  .apropos-texte {
+    max-width: 99vw;
+    padding: 0 0.5rem 1.2rem 0.5rem;
+  }
+  .apropos-texte-content {
+    font-size: 1.04rem;
+  }
+} 
